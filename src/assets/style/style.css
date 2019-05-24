@@ -1,0 +1,651 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  max-width: 1170px;
+  margin: auto;
+}
+
+.header {
+  height: 640px;
+  background: url("../img/sea.png") no-repeat;
+  background-size: cover;
+}
+
+.header {
+  -webkit-animation: slideshow 15s linear infinite 0s;
+          animation: slideshow 15s linear infinite 0s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+@-webkit-keyframes slideshow {
+  0% {
+    background-image: url(../img/sea.png);
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+  }
+  50% {
+    background-image: url(../img/header_2.jpg);
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+  }
+  100% {
+    background-image: url(../img/sea.png);
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+  }
+}
+
+.about_article {
+  height: 574px;
+  background: #ffffff;
+}
+
+.about_camp {
+  height: 630px;
+  background: #eee;
+}
+
+.news_article {
+  height: auto;
+}
+
+.team_list {
+  height: 630px;
+  background: #eee;
+}
+
+.day_plan {
+  height: auto;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.kalendar_plan {
+  height: auto;
+}
+
+.contact_us {
+  height: 400px;
+  background: #eee;
+}
+
+.footer {
+  height: 160px;
+}
+
+.footer_wrap {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer .description {
+  height: 63px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer .description div {
+  width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.footer .description i {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.footer .description i:hover {
+  color: #008ed6;
+}
+
+.footer span {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Pattaya', sans-serif;
+}
+
+.blue {
+  color: #008ed6;
+}
+
+.title {
+  margin: 10px 0 0 0;
+  font-size: 48px;
+  color: #262626;
+  font-family: 'Pattaya', sans-serif;
+}
+
+.pre_title {
+  margin-top: 38px;
+  font-size: 16px;
+  font-family: 'Pattaya', sans-serif;
+}
+
+.button {
+  border: 1px solid #d3d3d3;
+  padding: 16px 30px;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+  font-family: 'Pattaya', sans-serif;
+}
+
+.input {
+  height: 50px;
+  background-color: transparent;
+  outline: none;
+  border: 1px solid #d3d3d3;
+  width: 300px;
+  border-radius: 4px;
+  padding: 18px 20px;
+}
+
+.input::-webkit-input-placeholder {
+  font-family: "Pattaya", sans-serif;
+  font-size: 14px;
+}
+
+.input:-ms-input-placeholder {
+  font-family: "Pattaya", sans-serif;
+  font-size: 14px;
+}
+
+.input::-ms-input-placeholder {
+  font-family: "Pattaya", sans-serif;
+  font-size: 14px;
+}
+
+.input::placeholder {
+  font-family: "Pattaya", sans-serif;
+  font-size: 14px;
+}
+
+.button:hover {
+  background-color: #008ed6;
+}
+
+.button:hover span:hover {
+  color: #ffffff;
+}
+
+.navbar {
+  width: 100%;
+  background: #ffffff;
+}
+
+.navbar-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 96px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.navbar img {
+  height: 54px;
+}
+
+.menu__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  font-family: 'Pattaya', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.menu li {
+  padding: 0px 11px;
+}
+
+.menu a {
+  text-decoration: none;
+  display: block;
+  padding: 13px 0px;
+  color: #000000;
+}
+
+.menu a:hover {
+  color: #1E90FF;
+  background: url("../img/wave.png") no-repeat;
+  background-position: center bottom;
+}
+
+.hero-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 544px;
+}
+
+.hero_text {
+  text-align: center;
+  font-family: 'Pattaya', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  color: #ffffff;
+}
+
+.hero_text h1 {
+  margin: 0;
+}
+
+.about_article-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about_article-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 110px;
+}
+
+.group_text {
+  font-size: 24px;
+  font-family: 'Pattaya', sans-serif;
+  color: #1a1a1a;
+}
+
+.about_camp-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about_camp img {
+  height: 370px;
+  margin: 117px 67px;
+}
+
+.camp_text {
+  text-align: left;
+}
+
+.words {
+  font-size: 18px;
+  font-family: 'Pattaya', sans-serif;
+  line-height: 1.5;
+}
+
+.news_article_text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.news_article-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 50px;
+}
+
+.date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 30px;
+}
+
+.date img {
+  height: 240px;
+}
+
+.date_text {
+  font-size: 16px;
+  font-family: 'Pattaya', sans-serif;
+  margin: 0;
+  line-height: 1.5;
+  padding-left: 20px;
+}
+
+.date_text span {
+  font-size: 25px;
+}
+
+.date a {
+  font-size: 14px;
+  font-family: 'Pattaya', sans-serif;
+  text-decoration: none;
+  color: #000000;
+}
+
+.date a:hover {
+  color: #008ed6;
+}
+
+.team_list-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.team_list-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 60px;
+}
+
+.pedagog {
+  width: 226px;
+  height: 369px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pedagog_photo {
+  width: 160px;
+  height: 181px;
+  border: 6px solid #d3d3d3;
+  border-radius: 10px;
+}
+
+.pedagog_photo img {
+  height: 100%;
+  width: 100%;
+}
+
+.pedagog_name {
+  font-size: 18px;
+  font-family: 'Pattaya', sans-serif;
+  text-align: center;
+  margin: 10px 0 0 0;
+}
+
+.pedagog span {
+  font-size: 16px;
+  font-family: 'Pattaya', sans-serif;
+  text-align: center;
+}
+
+.pedagog_text {
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  font-family: 'Pattaya', sans-serif;
+  margin: 0;
+}
+
+.pedagog hr {
+  width: 70px;
+  border: none;
+  height: 1px;
+  background-color: #d3d3d3;
+}
+
+.pedagog i {
+  color: #008ed6;
+  font-size: 20px;
+  padding-right: 10px;
+}
+
+.pedagog i:hover {
+  cursor: pointer;
+  color: #a9a9a9;
+}
+
+.day_plan-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.day_plan-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 60px;
+}
+
+.day_plan img {
+  height: 442px;
+}
+
+.plan {
+  font-size: 18px;
+  font-family: 'Pattaya', sans-serif;
+}
+
+.kalendar_plan-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.kalendar_plan-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 60px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.filter_form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 40px;
+}
+
+.filter_form .button {
+  margin-left: 20px;
+}
+
+.event {
+  width: 272px;
+  height: 350px;
+  border: 1px solid #d3d3d3;
+  margin-bottom: 20px;
+}
+
+.event_name {
+  font-size: 24px;
+  color: #1a1a1a;
+  padding: 22px 0px 19px 0px;
+  border-bottom: 1px solid #d3d3d3;
+  margin: 0;
+  text-align: center;
+  font-family: 'Pattaya', sans-serif;
+}
+
+.event img {
+  padding: 22px 0px 19px 46px;
+  width: 228px;
+  height: 210px;
+}
+
+.event p {
+  text-align: center;
+  font-family: 'Pattaya', sans-serif;
+  font-size: 24px;
+  margin: 0;
+  padding: 22px 0 19px 0;
+  border-top: 1px solid #d3d3d3;
+}
+
+.contact_us-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact_us-wrap {
+  margin-top: 54px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.coordinate {
+  width: 167px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.coordinate #phn {
+  margin: 1px 6px 0 0;
+}
+
+.coordinate #env {
+  margin: 7px 0px 4px 10px;
+}
+
+.coordinate_text {
+  margin: 25px 0 0 0;
+  font-size: 18px;
+  font-family: "Pattaya", sans-serif;
+  line-height: 26px;
+  text-align: center;
+  color: #999999;
+}
+/*# sourceMappingURL=style.css.map */
