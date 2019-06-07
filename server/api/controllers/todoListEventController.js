@@ -2,10 +2,10 @@
 
 
 var mongoose = require('mongoose'),
-  Event = mongoose.model('Event');
+Event = mongoose.model('Event');
 
 exports.list_all_event = function(req, res) {
-  Task.find({}, function(err, event) {
+  Event.find({}, function(err, event) {
     if (err)
       res.send(err);
     res.json(event);
@@ -24,7 +24,7 @@ exports.create_a_event = function(req, res) {
 
 
 exports.read_a_event = function(req, res) {
-  Task.findById(req.params.eventId, function(err, event) {
+  Event.findById(req.params.eventId, function(err, event) {
     if (err)
       res.send(err);
     res.json(event);
@@ -33,7 +33,7 @@ exports.read_a_event = function(req, res) {
 
 
 exports.update_a_event = function(req, res) {
-  Task.findOneAndUpdate({_id: req.params.eventId}, req.body, {new: true}, function(err, event) {
+  Event.findOneAndUpdate({_id: req.params.eventId}, req.body, {new: true}, function(err, event) {
     if (err)
       res.send(err);
     res.json(event);
@@ -43,7 +43,7 @@ exports.update_a_event = function(req, res) {
 exports.delete_a_event = function(req, res) {
 
 
-    Task.remove({
+    Event.remove({
       _id: req.params.eventId
     }, function(err, event) {
       if (err)

@@ -15,10 +15,7 @@ var express = require('express'),
   app.use(bodyParser.json());
   
   var routes = require('./api/routes/todoListRoutes'); //importing route
-  routes(app); 
-  
-  var routes_event=require('./api/routes/todoListEventRoutes');
-  
+  app.use('/api', routes);
   
   app.listen(port);
   
