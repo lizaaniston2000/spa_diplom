@@ -93,7 +93,7 @@
                 <div class="container">
                     <div class="news_article-wrap">
                         <div class="news_article-date date">
-                            <img src="../assets/img/pirozhkov.jpg">
+                            <div><img src="../assets/img/pirozhkov.jpg"></div>
                             <p class="date_text"><span class="blue">У "Ювілейний" завітали справжні зірки!</span><br>
                                 Приголомшивими номерами від Дзідзьо, Артура Пірожкова, Світлани Лободи та інших <br>
                                 був здивован кожен! <br>
@@ -101,7 +101,7 @@
                             </p>
                         </div>
                         <div class="news_article-date date" v-for="mynew in news" :key="mynew.id">
-                            <img :src="mynew.src">
+                            <div><img :src="mynew.src"></div>
                             <p class="date_text"><span class="blue">{{ mynew.news_name }}</span><br>
                                     {{ mynew.news_item }}
                                  <br>
@@ -109,7 +109,7 @@
                             </p>
                         </div>
                         <div class="news_article-date date">
-                            <img src="../assets/img/pirozhkov.jpg">
+                            <div><img src="../assets/img/pirozhkov.jpg"></div>
                             <p class="date_text"><span class="blue">У "Ювілейний" завітали справжні зірки!</span><br>
                                 Приголомшивими номерами від Дзідзьо, Артура Пірожкова, Світлани Лободи та інших <br>
                                 був здивован кожен! <br>
@@ -331,9 +331,28 @@
 import Vue from 'vue';
 import axios from 'axios';
 export default {
+  name: "App",
   data() {
     return {
       news: []
+        /*{
+        "id": 1,
+        "news_name":"Відбувся турнір з волейболу",
+        "news_item": "У захоплюючій грі брали участь 2 і 3 загін",
+        "src": "https://photos.google.com/search/_tra_/photo/AF1QipO25UKrzZ_dVq35RCBT1IHgvHTDfe70_1WRH550"
+        },
+        {
+        "id": 2,
+        "news_name":"У Ювілейному День Нептуна!",
+        "news_item": "Багато казкових та міфічних персонажів завітали в наш табір",
+        "src": "https://photos.google.com/photo/AF1QipMe0gV5X5UsGkEchoCHH6mR0dzm98nVmEj5VOUz"
+        },
+        {
+        "id": 3,
+        "news_name":"Змагання зі скалодрому",
+        "news_item": "Діти відчули себе справжніми підкорювачами гір",
+        "src": "https://photos.google.com/photo/AF1QipMpIj5nGYIPLxuvNi0LYBmkJQn6rl71RWQxkn_G"
+        }*/
     };
   },
   mounted: function() {

@@ -363,14 +363,13 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   padding-bottom: 30px;
+  width: 1000px;
 }
 
 .date img {
   height: 240px;
+  width: 360px;
 }
 
 .date_text {
