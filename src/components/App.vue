@@ -328,12 +328,14 @@
 </style>
 
 <script>
+import Vue from 'vue';
+import axios from 'axios';
 export default {
   name: "App",
   data() {
     return {
-      news: [
-        {
+      news: []
+        /*{
         "id": 1,
         "news_name":"Відбувся турнір з волейболу",
         "news_item": "У захоплюючій грі брали участь 2 і 3 загін",
@@ -350,14 +352,13 @@ export default {
         "news_name":"Змагання зі скалодрому",
         "news_item": "Діти відчули себе справжніми підкорювачами гір",
         "src": "https://photos.google.com/photo/AF1QipMpIj5nGYIPLxuvNi0LYBmkJQn6rl71RWQxkn_G"
-        }
-      ],
-    
+        }*/
     };
   },
-  mounted() {
-    Vue.axios.get("http://localhost:3000/news").then((response) => 
-        (this.news = response))
+  mounted: function() {
+    Vue.axios.get("http://localhost:3000/api/news").then((response) => {
+        this.news = response.data
+    })
    }
   };
 </script>

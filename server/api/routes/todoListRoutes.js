@@ -4,6 +4,13 @@ var router = require('express').Router();
 var todoList = require('../controllers/todoListController');
 var todoListEvent = require('../controllers/todoListEventController');
 
+router.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+  
+
 router.get('/', function (req, res) {
     res.json({
         status: 'API Its Working',
