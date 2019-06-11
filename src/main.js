@@ -3,6 +3,8 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueRouter from 'vue-router'
 import App from './components/App.vue'
+import Main from './components/Main.vue'
+import News from './components/News.vue'
 import "./assets/style/normalize.css"
 import "./assets/style/style.css"
 
@@ -10,7 +12,8 @@ Vue.use(VueRouter)
 Vue.use(VueAxios, axios)
 
 const routes = [
-     { path: '/', component: App},
+     { path: '/', component: Main},
+     { path: '/adminnews', component: News},
 ]
 
 const router=new VueRouter({
