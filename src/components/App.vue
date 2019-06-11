@@ -93,7 +93,7 @@
                 <div class="container">
                     <div class="news_article-wrap">
                         <div class="news_article-date date">
-                            <img src="../assets/img/pirozhkov.jpg">
+                            <div><img src="../assets/img/pirozhkov.jpg"></div>
                             <p class="date_text"><span class="blue">У "Ювілейний" завітали справжні зірки!</span><br>
                                 Приголомшивими номерами від Дзідзьо, Артура Пірожкова, Світлани Лободи та інших <br>
                                 був здивован кожен! <br>
@@ -101,7 +101,7 @@
                             </p>
                         </div>
                         <div class="news_article-date date" v-for="mynew in news" :key="mynew.id">
-                            <img :src="mynew.src">
+                            <div><img :src="mynew.src"></div>
                             <p class="date_text"><span class="blue">{{ mynew.news_name }}</span><br>
                                     {{ mynew.news_item }}
                                  <br>
@@ -109,7 +109,7 @@
                             </p>
                         </div>
                         <div class="news_article-date date">
-                            <img src="../assets/img/pirozhkov.jpg">
+                            <div><img src="../assets/img/pirozhkov.jpg"></div>
                             <p class="date_text"><span class="blue">У "Ювілейний" завітали справжні зірки!</span><br>
                                 Приголомшивими номерами від Дзідзьо, Артура Пірожкова, Світлани Лободи та інших <br>
                                 був здивован кожен! <br>
