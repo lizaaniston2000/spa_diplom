@@ -328,35 +328,37 @@
 </style>
 
 <script>
+import Vue from 'vue';
+import axios from 'axios';
 export default {
   name: "App",
   data() {
     return {
-      news: [
-        {
+      news: []
+        /*{
         "id": 1,
-        "news_name":"У Ювілейний завітали справжні зірки!",
-        "news_item": "Приголомшивими номерами від Дзідзьо, Артура Пірожкова, Світлани Лободи та інших був здивован кожен!",
-        "src": "https://robohash.org/1"
+        "news_name":"Відбувся турнір з волейболу",
+        "news_item": "У захоплюючій грі брали участь 2 і 3 загін",
+        "src": "https://photos.google.com/search/_tra_/photo/AF1QipO25UKrzZ_dVq35RCBT1IHgvHTDfe70_1WRH550"
         },
         {
         "id": 2,
-        "news_name":"У Ювілейний завітали справжні зірки!",
-        "news_item": "Приголомшивими номерами від Дзідзьо, Артура Пірожкова, Світлани Лободи та інших був здивован кожен!",
-        "src": "https://robohash.org/2"
+        "news_name":"У Ювілейному День Нептуна!",
+        "news_item": "Багато казкових та міфічних персонажів завітали в наш табір",
+        "src": "https://photos.google.com/photo/AF1QipMe0gV5X5UsGkEchoCHH6mR0dzm98nVmEj5VOUz"
         },
         {
-        "id": 1,
-        "news_name":"У Ювілейний завітали справжні зірки!",
-        "news_item": "Приголомшивими номерами від Дзідзьо, Артура Пірожкова, Світлани Лободи та інших був здивован кожен!",
-        "src": "https://robohash.org/3"
-        }
-      ],
-    
+        "id": 3,
+        "news_name":"Змагання зі скалодрому",
+        "news_item": "Діти відчули себе справжніми підкорювачами гір",
+        "src": "https://photos.google.com/photo/AF1QipMpIj5nGYIPLxuvNi0LYBmkJQn6rl71RWQxkn_G"
+        }*/
     };
   },
-  mounted() {
-   
-  }
-};
+  mounted: function() {
+    Vue.axios.get("http://localhost:3000/api/news").then((response) => {
+        this.news = response.data
+    })
+   }
+  };
 </script>
