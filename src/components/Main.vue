@@ -229,12 +229,12 @@
                 </header>
                 <div class="filter_form">
                     <datepicker  id="dob" v-model="n_date"></datepicker>
-                    <button class="button"  v-on:click="filterDate()"><span class="blue">Знайти</span></button>
-                    <button class="button"><span class="blue">Скасувати</span></button>
+                    <button class="button"  v-on:click="dateFilterKey = 'filterDate'"><span class="blue">Знайти</span></button>
+                    <button class="button" v-on:click="dateFilterKey = 'all'"><span class="blue">Скасувати</span></button>
                 </div>
                 <div class="container">
                     <div class="kalendar_plan-wrap">
-                        <div class="event kalendar_card" v-for="myevent in event" :key="myevent.id">
+                        <div class="event kalendar_card" v-for="myevent in mainFilter" :key="myevent.id">
                             <h1 class="event_name"><span class="blue">{{myevent.event_name}}</span></h1>
                             <img :src="myevent.src">
                             <p>{{myevent.event_date}}</p>
@@ -307,7 +307,8 @@ export default {
     return {
       news: [],
       event:[],
-      n_date:''
+      n_date:'',
+      dateFilterKey: 'all',
     };
   },
   mounted: function() {
@@ -319,7 +320,13 @@ export default {
     })
    },
     computed:{
-       filterDate: function(){
+        mainFilter() {
+            return this[this.dateFilterKey]
+        },
+        all(){
+            return this.event; 
+        },
+        filterDate() {
         var d=this.n_date;
            return this.event.filter(ev=>{
                return ev.event_date===d;
