@@ -8,6 +8,8 @@ import News from './components/News.vue'
 import "./assets/style/normalize.css"
 import "./assets/style/style.css"
 import VeeValidate from 'vee-validate'
+import $ from 'jquery'
+import "./assets/script/script.js"
 
 Vue.use(VeeValidate);
 Vue.use(VueRouter)

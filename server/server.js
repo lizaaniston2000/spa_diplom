@@ -3,6 +3,7 @@ var express = require('express'),
   const mongoose = require('mongoose'),
   Task = require('./api/models/todoListModel'),
   Event = require('./api/models/todoListEvent'),
+  Teach = require('./api/models/todoListTeachers'),
   bodyParser = require('body-parser');
   const app=express();
 

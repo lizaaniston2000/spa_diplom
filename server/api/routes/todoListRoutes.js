@@ -3,6 +3,7 @@ var router = require('express').Router();
 //let router_event = require('express').Router();
 var todoList = require('../controllers/todoListController');
 var todoListEvent = require('../controllers/todoListEventController');
+var todoListTeach = require('../controllers/todoListTeachController');
 
 router.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -38,6 +39,16 @@ router.route('/news/:newsId')
  .get(todoListEvent.read_a_event)
  .put(todoListEvent.update_a_event)
  .delete(todoListEvent.delete_a_event);
+
+ router.route('/teach')
+ .get(todoListTeach.list_all_teach)
+ .post(todoListTeach.create_a_teach);
+ 
+ 
+ router.route('/teach/:teachId')
+ .get(todoListTeach.read_a_teach)
+ .put(todoListTeach.update_a_teach)
+ .delete(todoListTeach.delete_a_teach);
 
  
  

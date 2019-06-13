@@ -13,7 +13,7 @@
                             <li><a href="#camp_news">Новини</a></li>
                             <li><a href="#camp_team">Педагогічний склад</a></li>
                             <li><a href="#plan">Розклад дня</a></li>
-                            <li><a href="#calendar_plan">Календар зміни</a></li>
+                            <li><a href="#kalendar_plan">Календар зміни</a></li>
                             <li><a href="#contact">Контакти</a></li>
                         </ul>
                     </nav>
@@ -128,13 +128,13 @@
                 </header>
                 <div class="container">
                     <div class="team_list-wrap">
-                        <div class="pedagog team_list-pedagog">
+                        <div class="pedagog team_list-pedagog" v-for="teach in teachers" :key="teach.id">
                             <div class="pedagog_photo">
-                                <img src="../assets/img/first_ped.jpg" alt="">
+                                <img :src="teach.src">
                             </div>
-                            <p class="pedagog_name">Науменко Наталія Юріївна</p>
-                            <span class="blue">Вихователь</span>
-                            <p class="pedagog_text">Найкращий вихователь 1 загону. Віддана своїй роботі та чуйна до дітей</p>
+                            <p class="pedagog_name">{{ teach.ped_name }}</p>
+                            <span class="blue">{{ teach.ped_d }}</span>
+                            <p class="pedagog_text">{{ teach.ped_info}}</p>
                             <hr>
                             <div class="pedagog_logo">
                                 <i class="fab fa-telegram-plane"></i>
@@ -142,49 +142,7 @@
                                 <i class="fab fa-instagram"></i>
                             </div>
                         </div>
-                        <div class="pedagog team_list-pedagog">
-                            <div class="pedagog_photo">
-                                <img src="../assets/img/second_ped.jpg" alt="">
-                            </div>
-                            <p class="pedagog_name">Хамаєва Наталія Сергіївна</p>
-                            <span class="blue">Вожата</span>
-                            <p class="pedagog_text">1 загону не доведеться сумувати з цією креативною та цікавою вожатою</p>
-                            <hr>
-                            <div class="pedagog_logo">
-                                <i class="fab fa-telegram-plane"></i>
-                                <i class="fab fa-facebook-f"></i>
-                                <i class="fab fa-instagram"></i>
-                            </div>
-                        </div>
-                        <div class="pedagog team_list-pedagog">
-                            <div class="pedagog_photo">
-                                <img src="../assets/img/third_ped.jpg" alt="">
-                            </div>
-                            <p class="pedagog_name">Ступак Олена Миколаївна</p>
-                            <span class="blue">Вихователь</span>
-                            <p class="pedagog_text">Найдобріший та улюбленний вихователь 2 загону</p>
-                            <hr>
-                            <div class="pedagog_logo">
-                                <i class="fab fa-telegram-plane"></i>
-                                <i class="fab fa-facebook-f"></i>
-                                <i class="fab fa-instagram"></i>
-                            </div>
-                        </div>
-                        <div class="pedagog team_list-pedagog">
-                            <div class="pedagog_photo">
-                                <img src="../assets/img/fourth_ped.jpg" alt="">
-                            </div>
-                            <p class="pedagog_name">Косенко Єлизавета Андріївна</p>
-                            <span class="blue">Вожата</span>
-                            <p class="pedagog_text">З цією вожатою ваш загін буде непереможною, сильною та дружною командою! </p>
-                            <hr>
-                            <div class="pedagog_logo">
-                                <i class="fab fa-telegram-plane"></i>
-                                <i class="fab fa-facebook-f"></i>
-                                <i class="fab fa-instagram"></i>
-                            </div>
-                        </div>
-                    </div>
+                    </div>  
                 </div>
             </article>
         </section>
@@ -297,6 +255,7 @@
 import Vue from 'vue';
 import axios from 'axios';
 import Datepicker from './TouchDatePicker.vue';
+import $ from 'jquery'
 
 export default {
   components: {
@@ -309,6 +268,7 @@ export default {
       event:[],
       n_date:'',
       dateFilterKey: 'all',
+      teachers:[]
     };
   },
   mounted: function() {
@@ -317,6 +277,9 @@ export default {
     })
     Vue.axios.get("http://localhost:3000/api/event").then((response) => {
         this.event = response.data
+    })
+    Vue.axios.get("http://localhost:3000/api/teach").then((response) => {
+        this.teachers = response.data
     })
    },
     computed:{
