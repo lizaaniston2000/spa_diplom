@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--<template>
 <div>
     <div id="app">
@@ -343,3 +344,10 @@ components: {
         <router-view></router-view>
    </div>
 </template>
+=======
+<template>
+   <div class="main">
+        <router-view></router-view>
+   </div>
+</template>
+>>>>>>> d77b7169466a3b2ca3219feb51020bed8e86b328

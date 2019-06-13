@@ -228,6 +228,7 @@
                     <h1 class="title">Календар зміни</h1>
                 </header>
                 <div class="filter_form">
+<<<<<<< HEAD
                     <datepicker  id="dob" v-model="n_date"></datepicker>
                     <button class="button"  v-on:click="filterDate()"><span class="blue">Знайти</span></button>
                     <button class="button"><span class="blue">Скасувати</span></button>
@@ -238,6 +239,52 @@
                             <h1 class="event_name"><span class="blue">{{myevent.event_name}}</span></h1>
                             <img :src="myevent.src">
                             <p>{{myevent.event_date}}</p>
+=======
+                    <input type="text" placeholder="Обери дату" class="input">
+                    <button class="button"><span class="blue">Знайти</span></button>
+                </div>
+                <div class="container">
+                    <div class="kalendar_plan-wrap">
+                        <div class="event kalendar_card">
+                            <h1 class="event_name"><span class="blue">День знайомств</span></h1>
+                            <img src="../assets/img/img1.png" alt="">
+                            <p>24.06.2019</p>
+                        </div>
+                        <div class="event kalendar_card">
+                            <h1 class="event_name"><span class="blue">Відкриття II зміни</span></h1>
+                            <img src="../assets/img/img2.png" alt="">
+                            <p>25.06.2019</p>
+                        </div>
+                        <div class="event kalendar_card">
+                            <h1 class="event_name"><span class="blue">Казковий квест</span></h1>
+                            <img src="../assets/img/img3.png" alt="">
+                            <p>26.06.2019</p>
+                        </div>
+                        <div class="event kalendar_card">
+                            <h1 class="event_name"><span class="blue">Конкурс відеокліпів</span></h1>
+                            <img src="../assets/img/img6.png" alt="">
+                            <p>27.06.2019</p>
+                        </div>
+                        <div class="event kalendar_card">
+                            <h1 class="event_name"><span class="blue">Квест "Голодні ігри"</span></h1>
+                            <img src="../assets/img/img4.png" alt="">
+                            <p>28.06.2019</p>
+                        </div>
+                        <div class="event kalendar_card">
+                            <h1 class="event_name"><span class="blue">Шалений зоопарк</span></h1>
+                            <img src="../assets/img/img5.png" alt="">
+                            <p>29.06.2019</p>
+                        </div>
+                        <div class="event kalendar_card">
+                            <h1 class="event_name"><span class="blue">Свято морозива</span></h1>
+                            <img src="../assets/img/img9.png" alt="">
+                            <p>30.06.2019</p>
+                        </div>
+                        <div class="event kalendar_card">
+                            <h1 class="event_name"><span class="blue">Віденський бал</span></h1>
+                            <img src="../assets/img/img8.png" alt="">
+                            <p>01.07.2019</p>
+>>>>>>> d77b7169466a3b2ca3219feb51020bed8e86b328
                         </div>
                     </div>
                 </div>
@@ -296,6 +343,7 @@
 <script>
 import Vue from 'vue';
 import axios from 'axios';
+<<<<<<< HEAD
 import Datepicker from './TouchDatePicker.vue';
 
 export default {
@@ -308,12 +356,38 @@ export default {
       news: [],
       event:[],
       n_date:''
+=======
+export default {
+  name: "App",
+  data() {
+    return {
+      news: []
+        /*{
+        "id": 1,
+        "news_name":"Відбувся турнір з волейболу",
+        "news_item": "У захоплюючій грі брали участь 2 і 3 загін",
+        "src": "https://photos.google.com/search/_tra_/photo/AF1QipO25UKrzZ_dVq35RCBT1IHgvHTDfe70_1WRH550"
+        },
+        {
+        "id": 2,
+        "news_name":"У Ювілейному День Нептуна!",
+        "news_item": "Багато казкових та міфічних персонажів завітали в наш табір",
+        "src": "https://photos.google.com/photo/AF1QipMe0gV5X5UsGkEchoCHH6mR0dzm98nVmEj5VOUz"
+        },
+        {
+        "id": 3,
+        "news_name":"Змагання зі скалодрому",
+        "news_item": "Діти відчули себе справжніми підкорювачами гір",
+        "src": "https://photos.google.com/photo/AF1QipMpIj5nGYIPLxuvNi0LYBmkJQn6rl71RWQxkn_G"
+        }*/
+>>>>>>> d77b7169466a3b2ca3219feb51020bed8e86b328
     };
   },
   mounted: function() {
     Vue.axios.get("http://localhost:3000/api/news").then((response) => {
         this.news = response.data
     })
+<<<<<<< HEAD
     Vue.axios.get("http://localhost:3000/api/event").then((response) => {
         this.event = response.data
     })
@@ -327,5 +401,8 @@ export default {
        }
    }
 
+=======
+   }
+>>>>>>> d77b7169466a3b2ca3219feb51020bed8e86b328
   };
 </script>

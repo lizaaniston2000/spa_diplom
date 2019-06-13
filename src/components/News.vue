@@ -6,8 +6,11 @@
             <tr v-for="s in students" v-bind:key="s._id">
                 <td v-if="!check(s._id)"><router-link id="s._id" v-bind:to="'/news/' + s._id">{{s.news_name}}</router-link></td>
                 <td v-else><input type="text" v-model="c_name"></td>
+<<<<<<< HEAD
                 <td v-if="!check(s._id)"><router-link id="s._id" v-bind:to="'/news/' + s._id">{{s.src}}</router-link></td>
                 <td v-else><input type="text" v-model="c_photo"></td>
+=======
+>>>>>>> d77b7169466a3b2ca3219feb51020bed8e86b328
                 <!--<td v-if="!check(s._id)">{{s.group}}</td>
                 <td v-if="check(s._id)"><input type="checkbox" v-model="c_isDonePr"></td>
                 <td v-else><input type="checkbox" v-model="s.isDonePr"></td>
@@ -22,8 +25,16 @@
         <form>
             <input type="text" v-model="n_name" placeholder="">
  
+<<<<<<< HEAD
             <input type="text" placeholder="посилання на фото" v-model="n_photo">
             <button v-on:click.prevent="new_student()">ок</button><br>
+=======
+            <input type="number" placeholder="оцінка" min="0" max="5" v-model="n_mark" style="width:60px">
+            <button v-on:click.prevent="new_student()">ок</button><br>
+            <select v-if="mount"> 
+            <option v-bind:key="region._id" v-for="region in regions.data">{{region.Description}}</option>
+            </select>
+>>>>>>> d77b7169466a3b2ca3219feb51020bed8e86b328
         </form>
   </div>  
 </template>
@@ -44,8 +55,18 @@ export default {
          search:'',
          n_photo: '',
          n_name: '',
+<<<<<<< HEAD
          c_name: '',
          c_photo:'',
+=======
+         n_group: '',
+         n_mark: '',
+         n_isDonePr: false,
+         c_name: '',
+         c_group: '',
+         c_mark: 0,
+         c_isDonePr: false,
+>>>>>>> d77b7169466a3b2ca3219feb51020bed8e86b328
          ch: '',
          n: '',
          style: ''
@@ -62,6 +83,7 @@ export default {
 
     },
     methods: {
+<<<<<<< HEAD
     new_student: function(){
         let st = new Object;
             st.src = this.n_photo;
@@ -69,19 +91,52 @@ export default {
             Vue.axios.post("http://localhost:3000/api/news", {
                 src: this.n_photo,
                 news_name: this.n_name,
+=======
+    set_style: function(){
+        this.$store.commit('setStyle',this.style);
+    },
+    new_student: function(){
+        this.n_photo="https://robohash.org/"+this.n_name;
+        let st = new Object;
+            // st.photo = this.n_photo;
+            st.news_name = this.n_name;
+            // st.group = this.n_group;
+            // st.mark = this.n_mark;
+            // st.isDonePr = this.n_isDonePr;
+            Vue.axios.post("http://localhost:3000/api/news", {
+                // photo: this.n_photo,
+                news_name: this.n_name,
+                // group: this.n_group,
+                // mark: this.n_mark,
+                // isDonePr: (this.n_isDonePr!=false) ? true : false
+>>>>>>> d77b7169466a3b2ca3219feb51020bed8e86b328
             })
             .then((response)=>{
                 st._id=response.data._id;
                 console.log(response.data);
+<<<<<<< HEAD
+=======
+                this.$store.commit('increment');
+>>>>>>> d77b7169466a3b2ca3219feb51020bed8e86b328
             })
         this.students.push(st);
         this.n_photo = '';
         this.n_name = '';
+<<<<<<< HEAD
+=======
+        // this.n_group = '';
+        // this.n_mark = '';
+        // this.n_isDonePr = '';
+>>>>>>> d77b7169466a3b2ca3219feb51020bed8e86b328
         },
         remove_student : function(student){
             Vue.axios.delete("http://localhost:3000/api/news/"+student, {})
             .then((response)=>{
+<<<<<<< HEAD
                  console.log(response.data);
+=======
+                this.$store.commit('decrement');
+>>>>>>> d77b7169466a3b2ca3219feb51020bed8e86b328
             })
                 this.students=this.students.filter(element=>{
                 return element._id!==student;});
@@ -92,7 +147,13 @@ export default {
                 return element._id==student;
             });
             this.c_name = this.n.news_name;
+<<<<<<< HEAD
             this.c_photo=this.n.src;
+=======
+            // this.c_group = this.n.group;
+            // this.c_mark = this.n.mark;
+            // this.c_isDonePr = this.n.isDonePr;
+>>>>>>> d77b7169466a3b2ca3219feb51020bed8e86b328
         },
         check(student){
             if(student == this.ch)
@@ -103,11 +164,23 @@ export default {
         change_student: function(){
             Vue.axios.put("http://localhost:3000/api/news/"+this.ch, {
                 news_name: this.c_name,
+<<<<<<< HEAD
                 src: this.c_photo,
             })
             .then((response)=>{
                 this.n.news_name = this.c_name;
                 this.n.src=this.c_photo;
+=======
+                // group: this.c_group,
+                // mark: this.c_mark,
+                // isDonePr: this.c_isDonePr
+            })
+            .then((response)=>{
+                this.n.news_name = this.c_name;
+                // this.n.group = this.c_group;
+                // this.n.mark = this.c_mark;
+                // this.n.isDonePr = this.c_isDonePr;
+>>>>>>> d77b7169466a3b2ca3219feb51020bed8e86b328
             });
         this.ch=''; 
         }  
