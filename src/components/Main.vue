@@ -1,7 +1,7 @@
-<!--<template>
+<template>
 <div>
-    <div id="app">
-        <router-view>
+    <!--<div id="app">
+        <router-view>-->
     <header class="header">
         <div class="navbar">
             <div class="container">
@@ -228,16 +228,16 @@
                     <h1 class="title">Календар зміни</h1>
                 </header>
                 <div class="filter_form">
-                    <input type="text" placeholder="Обери дату" class="input">
-                    <datepicker></datepicker>
-                    <button class="button"><span class="blue">Знайти</span></button>
+                    <datepicker  id="dob" v-model="n_date"></datepicker>
+                    <button class="button"  v-on:click="filterDate()"><span class="blue">Знайти</span></button>
+                    <button class="button"><span class="blue">Скасувати</span></button>
                 </div>
                 <div class="container">
                     <div class="kalendar_plan-wrap">
                         <div class="event kalendar_card" v-for="myevent in event" :key="myevent.id">
-                            <h1 class="event_name"><span class="blue">{{ myevent.event_name }}</span></h1>
+                            <h1 class="event_name"><span class="blue">{{myevent.event_name}}</span></h1>
                             <img :src="myevent.src">
-                            <p>{{ myevent.event_date }}</p>
+                            <p>{{myevent.event_date}}</p>
                         </div>
                     </div>
                 </div>
@@ -284,8 +284,8 @@
             </div>
         </div>
     </footer>
-        </router-view>
-    </div>
+        <!--</router-view>
+    </div>-->
     </div>
 </template>
 
@@ -297,49 +297,35 @@
 import Vue from 'vue';
 import axios from 'axios';
 import Datepicker from './TouchDatePicker.vue';
+
 export default {
-components: {
+  components: {
     Datepicker
   },
   name: "App",
   data() {
     return {
       news: [],
-      event: []
-        /*{
-        "id": 1,
-        "news_name":"Відбувся турнір з волейболу",
-        "news_item": "У захоплюючій грі брали участь 2 і 3 загін",
-        "src": "https://photos.google.com/search/_tra_/photo/AF1QipO25UKrzZ_dVq35RCBT1IHgvHTDfe70_1WRH550"
-        },
-        {
-        "id": 2,
-        "news_name":"У Ювілейному День Нептуна!",
-        "news_item": "Багато казкових та міфічних персонажів завітали в наш табір",
-        "src": "https://photos.google.com/photo/AF1QipMe0gV5X5UsGkEchoCHH6mR0dzm98nVmEj5VOUz"
-        },
-        {
-        "id": 3,
-        "news_name":"Змагання зі скалодрому",
-        "news_item": "Діти відчули себе справжніми підкорювачами гір",
-        "src": "https://photos.google.com/photo/AF1QipMpIj5nGYIPLxuvNi0LYBmkJQn6rl71RWQxkn_G"
-        }*/
+      event:[],
+      n_date:''
     };
   },
   mounted: function() {
     Vue.axios.get("http://localhost:3000/api/news").then((response) => {
         this.news = response.data
     })
-     Vue.axios.get("http://localhost:3000/api/event").then((response) => {
+    Vue.axios.get("http://localhost:3000/api/event").then((response) => {
         this.event = response.data
     })
+   },
+    computed:{
+       filterDate: function(){
+        var d=this.n_date;
+           return this.event.filter(ev=>{
+               return ev.event_date===d;
+           })
+       }
    }
-  };
-  
-</script>-->
 
-<template>
-   <div class="main">
-        <router-view></router-view>
-   </div>
-</template>
+  };
+</script>

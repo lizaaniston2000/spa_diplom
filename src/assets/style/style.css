@@ -191,11 +191,11 @@
   font-size: 14px;
 }
 
-.button:hover {
+.button:hover{
   background-color: #008ed6;
 }
 
-.button:hover span:hover {
+.button:hover span{
   color: #ffffff;
 }
 
