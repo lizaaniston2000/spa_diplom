@@ -395,6 +395,7 @@
 .date img {
   height: 240px;
   width: 360px;
+  margin:0;
 }
 
 .date_text {
@@ -470,6 +471,7 @@
 .pedagog_photo img {
   height: 100%;
   width: 100%;
+  margin:0;
 }
 
 .pedagog_name {
@@ -609,6 +611,7 @@
   padding: 22px 0px 19px 46px;
   width: 228px;
   height: 210px;
+  margin:0;
 }
 
 .event p {

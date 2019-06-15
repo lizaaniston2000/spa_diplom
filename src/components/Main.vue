@@ -97,7 +97,6 @@
                             <p class="date_text"><span class="blue">У "Ювілейний" завітали справжні зірки!</span><br>
                                 Приголомшивими номерами від Дзідзьо, Артура Пірожкова, Світлани Лободи та інших <br>
                                 був здивован кожен! <br>
-                                <a href="">[Читати далі...]</a>
                             </p>
                         </div>
                         <div class="news_article-date date" v-for="mynew in news" :key="mynew.id">
@@ -105,15 +104,6 @@
                             <p class="date_text"><span class="blue">{{ mynew.news_name }}</span><br>
                                     {{ mynew.news_item }}
                                  <br>
-                                <a href="">[Читати далі...]</a>
-                            </p>
-                        </div>
-                        <div class="news_article-date date">
-                            <div><img src="../assets/img/pirozhkov.jpg"></div>
-                            <p class="date_text"><span class="blue">У "Ювілейний" завітали справжні зірки!</span><br>
-                                Приголомшивими номерами від Дзідзьо, Артура Пірожкова, Світлани Лободи та інших <br>
-                                був здивован кожен! <br>
-                                <a href="">[Читати далі...]</a>
                             </p>
                         </div>
                     </div>
@@ -127,8 +117,8 @@
                     <h1 class="title">Педагогічний склад</h1>
                 </header>
                 <div class="container">
-                    <div class="team_list-wrap">
-                        <div class="pedagog team_list-pedagog" v-for="teach in teachers" :key="teach.id">
+                    <carousel class="team_list-wrap" :navigation-next-label="navigationNext" :navigation-prev-label="navigationPrev" :navigationEnabled="true" :perPage="3" paginationActiveColor="#008ed6" paginationColor="#ffffff">
+                        <slide class="pedagog team_list-pedagog" v-for="teach in teachers" :key="teach.id">
                             <div class="pedagog_photo">
                                 <img :src="teach.src">
                             </div>
@@ -140,9 +130,9 @@
                                 <i class="fab fa-telegram-plane"></i>
                                 <i class="fab fa-facebook-f"></i>
                                 <i class="fab fa-instagram"></i>
-                            </div>
-                        </div>
-                    </div>  
+                            </div> 
+                        </slide>
+                    </carousel> 
                 </div>
             </article>
         </section>
@@ -237,7 +227,7 @@
                     <i class="fab fa-instagram"></i> 
                 </div>
                 <span class="blue">
-                    developed by Kosenko @2018
+                    developed by Kosenko @2019
                 </span>
             </div>
         </div>
@@ -256,10 +246,14 @@ import Vue from 'vue';
 import axios from 'axios';
 import Datepicker from './TouchDatePicker.vue';
 import $ from 'jquery'
+import { Carousel, Slide } from 'vue-carousel';
+
 
 export default {
   components: {
-    Datepicker
+    Datepicker,
+    Carousel,
+    Slide
   },
   name: "App",
   data() {
@@ -283,6 +277,8 @@ export default {
     })
    },
     computed:{
+        navigationNext: function() { return `<i class="fas fa-chevron-right"></i>` },
+        navigationPrev: function() { return `<i class="fas fa-chevron-left"></i>` },
         mainFilter() {
             return this[this.dateFilterKey]
         },

@@ -10,13 +10,21 @@ import "./assets/style/style.css"
 import VeeValidate from 'vee-validate'
 import $ from 'jquery'
 import "./assets/script/script.js"
+import VueCarousel from 'vue-carousel';
 
+Vue.use(VueCarousel);
 Vue.use(VeeValidate);
 Vue.use(VueRouter)
 Vue.use(VueAxios, axios)
 
 const routes = [
      { path: '/', component: Main},
+     { path: '/about_us', component: Main},
+     { path: '/camp_news', component: Main},
+     { path: '/camp_team', component: Main},
+     { path: '/plan', component: Main},
+     { path: '/kalendar_plan', component: Main},
+     { path: '/contact', component: Main},
      { path: '/adminnews', component: News},
 ]
 
