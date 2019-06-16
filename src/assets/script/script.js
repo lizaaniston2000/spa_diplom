@@ -1,4 +1,13 @@
 $(document).ready(function(){
+    
+$('.mobile_menu').hide();
+
+ $('.menu_burger').click(function($e){
+        
+    $e.preventDefault();
+    $('.mobile_menu').slideToggle();
+
+})
 
 
 var offset=$('.navbar').offset();

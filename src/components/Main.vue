@@ -6,6 +6,9 @@
         <div class="navbar">
             <div class="container">
                 <div class="navbar-wrap">
+                    <div class="menu_burger">
+                        <a href=""><i class="fas fa-bars"></i></a>
+                    </div>
                     <img src="../assets/img/logo2.png">
                     <nav class="menu">
                         <ul class="menu__items">
@@ -19,6 +22,16 @@
                     </nav>
                 </div>
             </div>
+            <nav class="mobile_menu">
+                <ul class="mobile_menu__items">
+                    <li><a href="#about_us">Про нас</a></li>
+                    <li><a href="#camp_news">Новини</a></li>
+                    <li><a href="#camp_team">Педагогічний склад</a></li>
+                    <li><a href="#plan">Розклад дня</a></li>
+                    <li><a href="#kalendar_plan">Календар зміни</a></li>
+                    <li><a href="#contact">Контакти</a></li>
+                </ul>
+            </nav>
         </div>
         <div class="hero">
             <div class="hero-wrap"> 
@@ -117,7 +130,10 @@
                     <h1 class="title">Педагогічний склад</h1>
                 </header>
                 <div class="container">
-                    <carousel class="team_list-wrap" :navigation-next-label="navigationNext" :navigation-prev-label="navigationPrev" :navigationEnabled="true" :perPage="3" paginationActiveColor="#008ed6" paginationColor="#ffffff">
+                    <carousel class="team_list-wrap" :navigation-next-label="navigationNext" 
+                    :navigation-prev-label="navigationPrev" :navigationEnabled="true" 
+                    :perPage="3" :perPageCustom="[[480,1],[768,2],[991,3]]"  
+                    paginationActiveColor="#008ed6" paginationColor="#ffffff">
                         <slide class="pedagog team_list-pedagog" v-for="teach in teachers" :key="teach.id">
                             <div class="pedagog_photo">
                                 <img :src="teach.src">
@@ -238,7 +254,7 @@
 </template>
 
 <style>
-    
+
 </style>
 
 <script>
