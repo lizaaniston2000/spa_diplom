@@ -95,14 +95,14 @@ export default {
         }
     },	 
     mounted: function(){
-        Vue.axios.get("http://localhost:3000/api/news").then((response)=>{
+        Vue.axios.get("http://localhost:5000/api/news").then((response)=>{
             console.log(response.data);
             this.students = response.data;
         })
         .then(()=>{
             console.log(this.students.length);
         });
-         Vue.axios.get("http://localhost:3000/api/teach").then((response)=>{
+         Vue.axios.get("http://localhost:5000/api/teach").then((response)=>{
             console.log(response.data);
             this.teaches = response.data;
         })
@@ -117,7 +117,7 @@ export default {
             tc.ped_name = this.n_t_name;
             tc.ped_d=this.n_t_d;
             tc.ped_info=this.n_t_info;
-            Vue.axios.post("http://localhost:3000/api/teach", {
+            Vue.axios.post("http://localhost:5000/api/teach", {
                 src: this.n_t_src,
                 ped_name: this.n_t_name,
                 ped_d:this.n_t_d,
@@ -138,7 +138,7 @@ export default {
             st.src = this.n_photo;
             st.news_name = this.n_name;
             st.news_item=this.n_item
-            Vue.axios.post("http://localhost:3000/api/news", {
+            Vue.axios.post("http://localhost:5000/api/news", {
                 src: this.n_photo,
                 news_name: this.n_name,
                 news_item:this.n_item
@@ -153,7 +153,7 @@ export default {
         this.n_item='';
         },
         remove_student : function(student){
-            Vue.axios.delete("http://localhost:3000/api/news/"+student, {})
+            Vue.axios.delete("http://localhost:5000/api/news/"+student, {})
             .then((response)=>{
                  console.log(response.data);
             })
@@ -161,7 +161,7 @@ export default {
                 return element._id!==student;});
             },
         remove_teaches : function(teach){
-            Vue.axios.delete("http://localhost:3000/api/teach/"+teach, {})
+            Vue.axios.delete("http://localhost:5000/api/teach/"+teach, {})
             .then((response)=>{
                  console.log(response.data);
             })
@@ -200,7 +200,7 @@ export default {
             }
         },
         change_student: function(){
-            Vue.axios.put("http://localhost:3000/api/news/"+this.ch, {
+            Vue.axios.put("http://localhost:5000/api/news/"+this.ch, {
                 news_name: this.c_name,
                 src: this.c_photo,
                 news_item:this.c_item
@@ -213,7 +213,7 @@ export default {
         this.ch=''; 
         },
         change_teach: function(){
-            Vue.axios.put("http://localhost:3000/api/teach/"+this.ct, {
+            Vue.axios.put("http://localhost:5000/api/teach/"+this.ct, {
                 ped_name: this.c_t_name,
                 src: this.c_t_src,
                 ped_d:this.c_t_d,

@@ -282,13 +282,13 @@ export default {
     };
   },
   mounted: function() {
-    Vue.axios.get("http://localhost:3000/api/news").then((response) => {
+    Vue.axios.get("http://localhost:5000/api/news").then((response) => {
         this.news = response.data
     })
-    Vue.axios.get("http://localhost:3000/api/event").then((response) => {
+    Vue.axios.get("http://localhost:5000/api/event").then((response) => {
         this.event = response.data
     })
-    Vue.axios.get("http://localhost:3000/api/teach").then((response) => {
+    Vue.axios.get("http://localhost:5000/api/teach").then((response) => {
         this.teachers = response.data
     })
    },
