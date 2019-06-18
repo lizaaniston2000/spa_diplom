@@ -26,7 +26,7 @@ var express = require('express'),
   var routes = require('./api/routes/todoListRoutes'); //importing route
   app.use('/api', routes);
   
-  app.listen(process.env.PORT || 5000);
+  app.listen(process.env.PORT);
   
   console.log('todo list RESTful API server started on: ' + port);
   
