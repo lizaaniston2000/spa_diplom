@@ -4,6 +4,7 @@ backend:
     preBuild:
       commands:
         - cd server
+        - npm ci
     build:
       commands:
         - npm run start
