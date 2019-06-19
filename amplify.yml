@@ -2,11 +2,9 @@ version: 0.1
 backend:
     phases:
     preBuild:
-      commands:
-        - cd server
-        - npm ci
     build:
       commands:
+        - cd server
         - npm run start
 frontend:
   phases:
