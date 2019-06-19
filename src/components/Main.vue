@@ -132,7 +132,7 @@
                 <div class="container">
                     <carousel class="team_list-wrap" :navigation-next-label="navigationNext" 
                     :navigation-prev-label="navigationPrev" :navigationEnabled="true" 
-                    :perPage="3" :perPageCustom="[[480,1],[768,2],[991,3]]"  
+                    :perPage="3" :perPageCustom="[[300,1],[340,1],[480,1],[768,2],[991,3]]"  
                     paginationActiveColor="#008ed6" paginationColor="#ffffff">
                         <slide class="pedagog team_list-pedagog" v-for="teach in teachers" :key="teach.id">
                             <div class="pedagog_photo">

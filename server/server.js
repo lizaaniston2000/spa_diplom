@@ -1,5 +1,5 @@
 var express = require('express'),
- //port = process.env.PORT || 5000;
+ port = process.env.PORT || 5000;
   const mongoose = require('mongoose'),
   Task = require('./api/models/todoListModel'),
   Event = require('./api/models/todoListEvent'),
@@ -26,7 +26,7 @@ var express = require('express'),
   var routes = require('./api/routes/todoListRoutes'); //importing route
   app.use('/api', routes);
   
-  app.listen(process.env.PORT);
+  app.listen(port);
   
   console.log('todo list RESTful API server started on: ' + port);
   

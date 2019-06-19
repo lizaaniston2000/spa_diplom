@@ -715,19 +715,23 @@
 }
 
 @media (max-width: 991px) {
-  .menu_burger{
-      display: block;
-  }
+.menu_burger{
+    display: block;
+}
 
 .menu{
     display:none;
 }
 
 .navbar-wrap{
-    height: 45px;
+    min-height: 70px;
     justify-content: space-between;
     padding-right: 4%;
     padding-left: 5%;
+}
+
+.fixedNav{
+  height:70px;
 }
 
 .mobile_menu{
@@ -810,6 +814,18 @@
 }
 
 @media (max-width: 768px) {
+  .navbar-wrap{
+    min-height: 65px;
+  }
+
+  .fixedNav{
+    height:65px;
+  }
+
+  .navbar img {
+    height: 45px;
+  }
+
   .hero_text h1 {
     font-size: 50px;
   }
@@ -871,6 +887,80 @@
   .coordinate {
     margin-bottom: 20px;
   }
-
 }
+  @media (max-width: 480px) {
+    .hero_text h1 {
+      font-size: 30px;
+    }
+
+    .hero_text img {
+      font-size: 50px;
+    }
+
+    .about_camp img {
+      height: 190px;
+    }
+
+    .pre_title {
+      font-size: 14px;
+    }
+
+    .title {
+      font-size: 35px;
+    }
+
+    .words {
+      width: 276px;
+      font-size: 16px;
+    }
+
+    .date {
+      width: 310px;
+    }
+
+    .date img {
+      height: 110px;
+      width: 142px;
+    }
+
+    .date_text span {
+      font-size: 14px;
+    }
+
+    .date_text {
+      font-size: 10px;
+    }
+
+    .VueCarousel-navigation-prev[data-v-453ad8cd] {
+      left: 35px;
+    }
+
+    .VueCarousel-navigation-next[data-v-453ad8cd] {
+      right: 35px;
+    }
+
+    .day_plan-wrap {
+      margin-top: 42px;
+    }
+
+    .day_plan img {
+      height: 260px;
+    }
+
+    .plan {
+      font-size: 10px;
+    }
+
+    .input {
+      width: 185px;
+    }
+
+    .filter_form .button {
+      margin-left: 6px;
+    }
+
+    .button {
+      padding: 10px 7px;
+    }
+  }
 /*# sourceMappingURL=style.css.map */
