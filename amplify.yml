@@ -1,0 +1,24 @@
+version: 0.1
+backend:
+    phases:
+    preBuild:
+      commands:
+        - cd server
+    build:
+      commands:
+        - npm run start
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci
+    build:
+      commands:
+        - node ./node_modules/webpack/bin/webpack.js
+  artifacts:
+    baseDirectory: dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
