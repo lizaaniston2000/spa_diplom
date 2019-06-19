@@ -15,8 +15,8 @@ var express = require('express'),
   });
   
   mongoose.Promise = global.Promise;
-  //mongoose.connect('mongodb://localhost:27017/yubik', {useNewUrlParser: true });
-  mongoose.connect('mongodb+srv://liza_aniston:sail2000@cluster0-7wq7s.mongodb.net/yubik?retryWrites=true', {useNewUrlParser: true });
+  mongoose.connect('mongodb://localhost:27017/yubik', {useNewUrlParser: true });
+  //mongoose.connect('mongodb+srv://liza_aniston:sail2000@cluster0-7wq7s.mongodb.net/yubik?retryWrites=true', {useNewUrlParser: true });
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
 
