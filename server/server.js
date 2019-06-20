@@ -1,5 +1,6 @@
-var express = require('express'),
- port = process.env.PORT || 5000;
+  var express = require('express'),
+  const CONNECTION_URI=process.env.MONGODB_URI||'mongodb://localhost:27017/yubik';
+  port = process.env.PORT || 5000;
   const mongoose = require('mongoose'),
   Task = require('./api/models/todoListModel'),
   Event = require('./api/models/todoListEvent'),
@@ -15,8 +16,9 @@ var express = require('express'),
   });
   
   mongoose.Promise = global.Promise;
+  mongoose.connect(CONNECTION_URI, {useNewUrlParser: true});
   //mongoose.connect('mongodb://localhost:27017/yubik', {useNewUrlParser: true });
-  mongoose.connect('mongodb+srv://liza_aniston:sail2000@cluster0-7wq7s.mongodb.net/yubik?retryWrites=true', {useNewUrlParser: true });
+  //mongoose.connect('mongodb+srv://liza_aniston:sail2000@cluster0-7wq7s.mongodb.net/yubik?retryWrites=true', {useNewUrlParser: true });
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
 
