@@ -1,5 +1,5 @@
   var express = require('express'),
-  CONNECTION_URI=process.env.MONGOLAB_COPPER_URI||'mongodb://localhost:27017/yubik';
+ // CONNECTION_URI=process.env.MONGOLAB_COPPER_URI||'mongodb://localhost:27017/yubik';
   port = process.env.PORT || 5000;
   const mongoose = require('mongoose'),
   Task = require('./api/models/todoListModel'),
@@ -16,7 +16,7 @@
   });
   
   mongoose.Promise = global.Promise;
-  mongoose.connect(CONNECTION_URI, {useNewUrlParser: true});
+  mongoose.connect('mongodb://liza:sail2000@ds239967.mlab.com:39967/heroku_14bnzgcj', {useNewUrlParser: true});
   //mongoose.connect('mongodb://localhost:27017/yubik', {useNewUrlParser: true });
   //mongoose.connect('mongodb+srv://liza_aniston:sail2000@cluster0-7wq7s.mongodb.net/yubik?retryWrites=true', {useNewUrlParser: true });
   app.use(bodyParser.urlencoded({ extended: true }));
