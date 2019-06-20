@@ -12,6 +12,7 @@ import $ from 'jquery'
 import "./assets/script/script.js"
 import VueCarousel from 'vue-carousel';
 
+
 Vue.use(VueCarousel);
 Vue.use(VeeValidate);
 Vue.use(VueRouter)
