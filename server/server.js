@@ -16,7 +16,7 @@
   });
   
   mongoose.Promise = global.Promise;
-  mongoose.connect('mongodb://liza:sail2000@ds239967.mlab.com:39967/heroku_14bnzgcj', {useNewUrlParser: true});
+  mongoose.connect('mongodb://heroku_14bnzgcj:dpsj7mv755crve2cf1vo9simmt@ds239967.mlab.com:39967/heroku_14bnzgcj', {useNewUrlParser: true});
   //mongoose.connect('mongodb://localhost:27017/yubik', {useNewUrlParser: true });
   //mongoose.connect('mongodb+srv://liza_aniston:sail2000@cluster0-7wq7s.mongodb.net/yubik?retryWrites=true', {useNewUrlParser: true });
   app.use(bodyParser.urlencoded({ extended: true }));
