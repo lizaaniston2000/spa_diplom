@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development",
+    "build": "webpack-dev-server --mode development",
+    "start":"node server/server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Elizabeth Kosenko",

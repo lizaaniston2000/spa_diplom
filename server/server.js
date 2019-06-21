@@ -22,19 +22,8 @@
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
 
-
-  
-
   var routes = require('./api/routes/todoListRoutes'); //importing route
   app.use('/api', routes);
-
-  if (process.env.NODE_ENV === 'production') {
-    // Static folder
-    app.use(express.static(__dirname + '/src/'));
-  
-    // Handle SPA
-    app.get(/.*/, (req, res) => res.sendFile(__dirname + '/src/index.html'));
-  }
   
   
   app.listen(port);
