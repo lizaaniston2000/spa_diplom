@@ -2,6 +2,7 @@
   CONNECTION_URI=process.env.MONGODB_URI||'mongodb://localhost:27017/yubik';
   port = process.env.PORT || 5000;
   const mongoose = require('mongoose'),
+  const serveStatic = require('serve-static');
   Task = require('./api/models/todoListModel'),
   Event = require('./api/models/todoListEvent'),
   Teach = require('./api/models/todoListTeachers'),
@@ -14,6 +15,8 @@
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
     next();
   });
+
+  app.use(serveStatic(__dirname + "/../src"));
   
   mongoose.Promise = global.Promise;
   mongoose.connect(CONNECTION_URI, {useNewUrlParser: true});
