@@ -1,5 +1,5 @@
   var express = require('express'),
-  CONNECTION_URI=process.env.MONGOLAB_COPPER_URI||'mongodb://localhost:27017/yubik';
+  CONNECTION_URI=process.env.MONGODB_URI||'mongodb://localhost:27017/yubik';
   port = process.env.PORT || 5000;
   const mongoose = require('mongoose'),
   Task = require('./api/models/todoListModel'),
